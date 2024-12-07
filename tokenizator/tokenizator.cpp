@@ -1,7 +1,7 @@
 #include "token.hpp"
 #include "util.hpp"
 
-int main() {
+auto main() -> __int32 {
     if (!EnableDebugPrivilege()) {
         std::cerr << "Failed to enable SeDebugPrivilege.\n";
         return 1;
@@ -39,7 +39,7 @@ int main() {
     disableTokenPrivileges(hDpsToken);
     disableTokenGroups(hDpsToken);
 
-    std::cout << "Operation complete. Continuing will restore all the privileges.\n";
+    std::cout << "Operation completed. Continuing will restore the previous status of all token privileges and groups.\n";
     system("pause");
 
     enableAllTokenGroups(hDpsToken);
